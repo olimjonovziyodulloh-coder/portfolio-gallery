@@ -56,12 +56,48 @@ body::before {
 
 .subtitle { margin-top: 10px; color: #a8a29b; font-size: 15px; max-width: 620px; }
 
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px;
+  margin: 28px 0 14px;
+}
+
+.search { display: flex; flex-direction: column; gap: 5px; flex: 1 1 240px; }
+
+.search-label {
+  color: #c7c0b8;
+  font-family: "Rajdhani", "Arial Narrow", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.search-input {
+  width: 100%;
+  min-height: 40px;
+  background: #121011;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--gold-soft);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+}
+
+.search-input::placeholder { color: #8f8a86; }
+.search-input:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-left-color: var(--gold); }
+
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin: 28px 0 14px;
 }
+
+.controls .filter-bar { margin: 0; }
 
 .filter-btn {
   background: var(--panel);
@@ -161,6 +197,121 @@ body::before {
 .project-links a:hover { color: var(--gold-light); }
 .project-links a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
-.empty { color: var(--muted); padding: 20px 0; }
+.details-btn {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid var(--gold-soft);
+  color: var(--gold-light);
+  font-family: "Rajdhani", "Arial Narrow", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.6px;
+  padding: 2px 10px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.details-btn:hover { background: #241c1e; border-color: var(--gold); color: #f0e6d6; }
+.details-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  color: #a8a29b;
+  padding: 24px 0;
+}
+
+.reset-btn {
+  background: var(--panel-hi);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--gold);
+  color: var(--gold-light);
+  font-family: "Rajdhani", "Arial Narrow", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.reset-btn:hover { background: #251c1e; color: #f0e6d6; }
+.reset-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(8, 7, 8, 0.82);
+}
+
+.modal {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 24px 22px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+.modal::before, .modal::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--gold);
+  pointer-events: none;
+}
+
+.modal::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.modal::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+.modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.modal-head h2 {
+  font-family: "Rajdhani", "Arial Narrow", Arial, sans-serif;
+  font-size: 26px;
+  line-height: 1.15;
+  color: #f0e6d6;
+}
+
+.modal-close {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  background: var(--crimson-deep);
+  border: 1px solid var(--crimson);
+  color: #f0e6d6;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-close:hover { background: var(--crimson); }
+.modal-close:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.modal-desc { color: #a8a29b; font-size: 0.95rem; margin-bottom: 14px; }
+.modal .tech-list { margin-bottom: 16px; }
+.modal .project-links { border-top: 1px dashed var(--line); padding-top: 14px; }
+.no-demo { color: #8f8a86; font-weight: 500; }
 
 @media (max-width: 600px) { .app { padding: 32px 14px 40px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
