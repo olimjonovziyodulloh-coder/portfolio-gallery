@@ -33,19 +33,19 @@ const projects = [
   },
   {
     id: 5,
-    title: 'Git Exercise',
-    description: 'A practice repository demonstrating branching, merging, commit history and pushing to GitHub from the command line.',
-    tech: ['Git'],
-    github: 'https://github.com/olimjonovziyodulloh-coder/git-exercise',
-    demo: 'https://github.com/olimjonovziyodulloh-coder/git-exercise'
+    title: 'Student Directory',
+    description: 'Task 11-A: three student profile cards rendered from one reusable component that takes five props.',
+    tech: ['React'],
+    github: 'https://github.com/olimjonovziyodulloh-coder/task11',
+    demo: 'https://olimjonovziyodulloh-coder.github.io/task11/'
   },
   {
     id: 6,
-    title: 'Student Directory (Task 11-A)',
-    description: 'A React app that renders reusable student profile cards from props, showing name, student ID, major, year and GPA.',
-    tech: ['React', 'JavaScript', 'CSS'],
-    github: 'https://github.com/olimjonovziyodulloh-coder/task11',
-    demo: 'https://olimjonovziyodulloh-coder.github.io/task11/'
+    title: 'React Lab',
+    description: 'The Week 11 class tasks from the study guide, video lecture and visual lecture, rebuilt as one React app.',
+    tech: ['React'],
+    github: 'https://github.com/olimjonovziyodulloh-coder/react-lab',
+    demo: 'https://olimjonovziyodulloh-coder.github.io/react-lab/'
   }
 ];
 
